@@ -25,6 +25,10 @@
     vm.destroy = function(product_index){
       vm.data.splice(product_index, 1);
     }
-
+    vm.new_product = {};
+    vm.create = function(){
+      vm.data.push(angular.copy(vm.new_product));
+      vm.new_product = {};
+    }
   }
 })();
