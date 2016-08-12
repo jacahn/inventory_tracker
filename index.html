@@ -14,7 +14,7 @@
 
     <main data-ng-controller="inventory_controller as vm">
       <h2>Total Value: ${{vm.total_value()}}</h2>
-      <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on"/>
+      <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
       <table class="table table-striped">
         <thead>
           <tr>
@@ -27,6 +27,7 @@
             <th data-ng-click="vm.sort_data_by('quantity')">Quantity</th>
             <th data-ng-click="vm.sort_data_by('country')">Country of Origin</th>
             <th>Notes</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -44,6 +45,7 @@
             <td>
               <input type="text" data-ng-model="product.notes"/>
             </td>
+            <td data-ng-click="vm.destroy($index)">&cross;</td>
           </tr>
         </tbody>
       </table>
